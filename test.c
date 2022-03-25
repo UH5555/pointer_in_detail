@@ -126,13 +126,95 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	char* arr[5];
+//	char* (*pa)[5] = &arr;
+//	//char* - pa指向的数组的元素类型
+//	//* - 说明pa是指针
+//	//pa - 指针变量的名字
+//	//[5] - pa指向的数组是5个元素的
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = arr;
+//	int i = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(p + i));
+//	}
+//	//int(*pa)[10] = &arr;
+//	//int i = 0;
+//	//for (i = 0; i < 10; i++)
+//	//{
+//	//	printf("%d ", *(*pa + i));
+//	//}
+//	/*for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", (*pa)[i]);
+//	}*/
+//	return 0;
+//}
+
+////参数是数组的形式
+//void print1(int arr[3][5], int x, int y)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < x; i++)
+//	{
+//		for (j = 0; j < y; j++)
+//		{
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+////参数是指针的形式
+//void print2(int(*p)[5], int x, int y)
+//{
+//	int i = 0;
+//	for (i = 0; i < x; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < y; j++)
+//		{
+//			//printf("%d ", p[i][j]);
+//			//printf("%d ", *(p[i] + j));
+//			//printf("%d ", *(*(p + i) + j));
+//			printf("%d ", (*(p + i))[j]);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[3][5] = { {1,2,3,4,5},{2,3,4,5,6},{3,4,5,6,7} };
+//	print1(arr,3,5);//arr - 数组名 -数组名就是首元素地址
+//	print2(arr, 3, 5);
+//	//int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	//int i = 0;
+//	//int* p = arr;
+//	//for (i = 0; i < 10; i++)
+//	//{
+//	//	printf("%d ", p[i]);
+//	//	printf("%d ", *(p + i));
+//	//	printf("%d ", *(arr + i));
+//	//	printf("%d ", arr[i]);//arr[i] == *(arr+i) == *(p+i) == p[i]
+//	//}
+//	return 0;
+//}
+
 int main()
 {
-	char* arr[5];
-	char* (*pa)[5] = &arr;
-	//char* - pa指向的数组的元素类型
-	//* - 说明pa是指针
-	//pa - 指针变量的名字
-	//[5] - pa指向的数组是5个元素的
+	char ch = 'w';
+	char* p = &ch;
+	const char* p2 = "abcdef";
+
 	return 0;
 }
