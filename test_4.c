@@ -59,7 +59,6 @@
 //	return 0;
 //}
 
-
 ////函数指针 - 是指向函数的指针 - 存放函数的地址
 ////数组指针 - 是指向数组的指针
 //
@@ -77,6 +76,8 @@
 //	printf("%p\n", Add);*/
 //	//&函数名 和 函数名 都是函数的地址。
 //	int(*pa)(int, int) = Add;
+//	printf("%d\n",pa(2, 3));
+//	printf("%d\n", Add(2, 3));
 //	printf("%d\n",(*pa)(2, 3));
 //	return 0;
 //}
@@ -92,3 +93,61 @@
 //	(*p)("hello bit");
 //	return 0;
 //}
+
+//(*(void(*)())0)();
+//void(*)() - 函数指针类型
+//(void(*)())0 - 把0强制类型转换为函数指针类型 - 0就是一个函数的地址
+//(*(void(*)())0)() - 调用0地址处的该函数
+
+//void(*signal(int,void(*)(int)))(int);
+//void(*      signal(int,void(*)(int))     )(int)
+//void(*      signal(int,  void(*)(int)  )   )(int)
+//signal是一个函数声明
+//signal函数的参数有2个，第一个是int，第二个是函数指针，该函数指针指向的函数的参数是int，返回类型是void
+//signal函数的返回类型也是一个函数指针，该函数指针指向的函数的参数是int，返回类型是void
+//typedef void(*pfun_t)(int);
+//pfun_t signal(int, pfun_t);
+
+//int Add(int x, int y)
+//{
+//	return x + y;
+//}
+//int Sub(int x, int y)
+//{
+//	return x - y;
+//}
+//int Mul(int x, int y)
+//{
+//	return x * y;
+//}
+//int Div(int x, int y)
+//{
+//	return x / y;
+//}
+//
+//int main()
+//{
+//	//指针数组
+//	int* arr[5];
+//	//需要一个数组，这个数组可以存放函数
+//	int(*pa)(int, int) = Add;//Sub/Mul/Div
+//	int(*parr[4])(int, int) = { Add,Sub,Mul,Div };//函数指针的数组
+//	int i = 0;
+//	for (i = 0; i < 4; i++)
+//	{
+//		printf("%d\n", parr[i](2, 3));//5  -1   6   0
+//	}
+//	return 0;
+//}
+
+char* my_strcpy(char* dest, const char* src)
+//写一个函数指针pf，能够指向my_strcpy
+//写一个函数指针数组pfArr，能够存放4个my_strcpy函数的地址
+{
+}
+
+int main()
+{
+	char*(*pf)(char*, const char*) = my_strcpy;
+	char* (*ppArr[4])(char*, const char*) = { my_strcpy };
+}
